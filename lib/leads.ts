@@ -183,6 +183,7 @@ const STATUS_MAP: Record<string, LeadStatus> = {
   closed: "Won",
   lost: "Lost",
   "check in later": "Check in later",
+  "call booked": "Call Booked",
   "proposal sent": "Proposal sent",
   negotiating: "Negotiating",
 };

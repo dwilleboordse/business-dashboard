@@ -5,7 +5,7 @@ A personal weekly business dashboard. Replaces the original Excel sheet with a w
 Tabs:
 - **Overview** — KPIs across revenue, leads, socials, email
 - **Revenue** — monthly goal/actual/costs/profit, product mix, financial planning
-- **Leads** — kanban pipeline, table, follow-up tracking, analytics. Imported from ClickUp CSV.
+- **Leads** — kanban pipeline, table, follow-up tracking, analytics. Imported from ClickUp CSV or scheduled Google Calendar syncs.
 - **Socials** — weekly entry for engagement, leads, clients & fans across IG / LinkedIn / Twitter / YouTube
 - **Emails** — monthly subscribers and per-email opens / clicks / unsubs / revenue
 
@@ -78,6 +78,10 @@ The mapping used:
 - Custom fields captured: Deal Value, Probability %, Deal Source, Contact Name, Email, Phone, Performance model, Service/Product labels, Due Date (next follow-up), Date Done (closed date), Latest Comment (notes).
 
 After importing once, manage everything inside the dashboard — add/edit leads, drag between stages, set follow-up dates. Your local store is the source of truth.
+
+## Importing booked calls from Google Calendar
+
+The `POST /api/leads/calendar` endpoint accepts normalized Calendly booking data from the daily Codex automation. New leads enter the pipeline as **Call Booked**, between **Check in later** and **Proposal sent**. Imports are deduplicated by Google Calendar event ID and email address; an existing **Check in later** lead advances to **Call Booked**, while leads that are already further through the pipeline keep their current status.
 
 ## Importing email campaigns from ActiveCampaign
 

@@ -9,6 +9,7 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxi
 
 const STATUS_COLORS: Record<LeadStatus, string> = {
   "Check in later": "#64748b",
+  "Call Booked": "#22d3ee",
   "Proposal sent": "#7c5cff",
   "Negotiating": "#f59e0b",
   "Won": "#22c55e",

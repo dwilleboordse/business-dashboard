@@ -16,6 +16,7 @@ type View = "Pipeline" | "Table" | "Follow-ups" | "Analytics";
 
 const STATUS_COLORS: Record<LeadStatus, string> = {
   "Check in later": "#64748b",
+  "Call Booked": "#22d3ee",
   "Proposal sent": "#7c5cff",
   "Negotiating": "#f59e0b",
   "Won": "#22c55e",
@@ -186,7 +187,7 @@ function PipelineView({
   onDrop: (id: string, status: LeadStatus) => void;
 }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-3">
       {LEAD_STATUSES.map((status) => {
         const items = leads.filter((l) => l.status === status);
         const total = items.reduce((s, l) => s + (l.value ?? 0), 0);

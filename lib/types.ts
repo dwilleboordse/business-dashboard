@@ -104,6 +104,7 @@ export type EmailsState = {
 
 export const LEAD_STATUSES = [
   "Check in later",
+  "Call Booked",
   "Proposal sent",
   "Negotiating",
   "Won",
@@ -112,7 +113,7 @@ export const LEAD_STATUSES = [
 export type LeadStatus = (typeof LEAD_STATUSES)[number];
 
 /** Statuses that count as still-open pipeline (i.e. not Won/Lost). */
-export const OPEN_STATUSES: LeadStatus[] = ["Check in later", "Proposal sent", "Negotiating"];
+export const OPEN_STATUSES: LeadStatus[] = ["Check in later", "Call Booked", "Proposal sent", "Negotiating"];
 
 export type Lead = {
   id: string;
